@@ -8,17 +8,17 @@
 ;;
 ;;; License: GPLv3
 
-(setq ghq-packages
+(setq spacemacs-ghq-packages
   '(
      exec-path-from-shell
      ghq
      helm-ghq))
 
-(setq ghq-excluded-packages '())
+(setq spacemacs-ghq-excluded-packages '())
 
 (defun spacemacs-ghq/post-init-exec-path-from-shell ()
-  (evil-after-load 'exec-path-from-shell
-    '(add-to-list exec-path-from-shell-variables "GHQ_ROOT")))
+  (eval-after-load 'exec-path-from-shell
+    '(add-to-list 'exec-path-from-shell-variables "GHQ_ROOT")))
 
 (defun spacemacs-ghq/init-ghq ()
   (use-package ghq
