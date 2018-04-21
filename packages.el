@@ -11,7 +11,8 @@
 (setq ghq-packages
   '(
      exec-path-from-shell
-     ghq))
+     ghq
+     helm-ghq))
 
 (setq ghq-excluded-packages '())
 
@@ -22,3 +23,7 @@
 (defun spacemacs-ghq/init-ghq ()
   (use-package ghq
     :commands (ghq ghq-ssh ghq-list ghq-list-full-path helm-ghq-list)))
+
+(defun spacemacs-ghq/init-helm-ghq ()
+  (use-package helm-ghq
+    :defer t))
