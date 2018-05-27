@@ -14,7 +14,7 @@
      ghq
      helm-ghq
      magit
-     ))
+     projectile))
 
 (setq spacemacs-ghq-excluded-packages '())
 
@@ -39,3 +39,9 @@
     (defun magit-list-repos ()
       (require 'ghq)
       (ghq--find-projects-full-path))))
+
+(defun spacemacs-ghq/pre-init-projectile ()
+  (eval-after-load 'projectile
+    '(defun projectile-relevant-known-projects ()
+       (require 'ghq)
+       (projectile--remove-current-project ghq--find-projects-full-path))))
