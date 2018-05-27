@@ -24,7 +24,7 @@
 
 (defun spacemacs-ghq/init-ghq ()
   (use-package ghq
-    :commands (ghq ghq-ssh ghq-list ghq-list-full-path helm-ghq-list)))
+    :defer t))
 
 (defun spacemacs-ghq/init-helm-ghq ()
   (use-package helm-ghq
