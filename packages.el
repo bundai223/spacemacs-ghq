@@ -18,9 +18,8 @@
 
 (setq spacemacs-ghq-excluded-packages '())
 
-(defun spacemacs-ghq/post-init-exec-path-from-shell ()
-  (eval-after-load 'exec-path-from-shell
-    '(add-to-list 'exec-path-from-shell-variables "GHQ_ROOT")))
+(defun spacemacs-ghq/pre-init-exec-path-from-shell ()
+  (add-to-list 'exec-path-from-shell-variables "GHQ_ROOT"))
 
 (defun spacemacs-ghq/init-ghq ()
   (use-package ghq
