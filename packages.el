@@ -40,6 +40,7 @@
       (ghq--find-projects-full-path))))
 
 (defun spacemacs-ghq/pre-init-projectile ()
+  (setq projectile-track-known-projects-automatically nil)
   (eval-after-load 'projectile
     '(defun projectile-relevant-known-projects ()
        (require 'ghq)
