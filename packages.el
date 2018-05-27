@@ -12,7 +12,9 @@
   '(
      exec-path-from-shell
      ghq
-     helm-ghq))
+     helm-ghq
+     magit
+     ))
 
 (setq spacemacs-ghq-excluded-packages '())
 
@@ -31,3 +33,9 @@
     (custom-set-variables
       '(helm-ghq-command-ghq-arg-list '("list"))
       '(helm-ghq-command-git-arg-ls-files '("ls-files" "-co" "--exclude-standard" "--")))))
+
+(defun spacemacs-ghq/pre-init-magit ()
+  (with-eval-after-load 'magit-repos
+    (defun magit-list-repos ()
+      (require 'ghq)
+      (ghq--find-projects-full-path))))
