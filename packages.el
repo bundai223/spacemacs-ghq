@@ -44,4 +44,4 @@
   (eval-after-load 'projectile
     '(defun projectile-relevant-known-projects ()
        (require 'ghq)
-       (projectile--remove-current-project ghq--find-projects-full-path))))
+       (projectile--remove-current-project (ghq--find-projects-full-path)))))
