@@ -34,6 +34,7 @@
       '(helm-ghq-command-git-arg-ls-files '("ls-files" "-co" "--exclude-standard" "--")))))
 
 (defun spacemacs-ghq/pre-init-magit ()
+  (setq-default magit-repository-directories t)
   (with-eval-after-load 'magit-repos
     (defun magit-list-repos ()
       (require 'ghq)
