@@ -1,0 +1,21 @@
+#+TITLE: ghq layer
+
+* Table of Contents :TOC_4_gh:noexport:
+- [[#description][Description]]
+  - [[#features][Features:]]
+- [[#install][Install]]
+  - [[#layer][Layer]]
+  - [[#ghq][ghq]]
+
+* Description
+This layer brings [[https://github.com/motemen/ghq][ghq]] integration to Spacemacs.
+** Features:
+- List the ghq repositories using =magit-list-repositories= (~SPC g L~)
+
+* Install
+** Layer
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =ghq= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+** ghq
+Install [[https://github.com/motemen/ghq][ghq]].
