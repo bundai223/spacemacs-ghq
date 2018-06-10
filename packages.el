@@ -10,19 +10,17 @@
 
 (setq spacemacs-ghq-packages
   '(
-     exec-path-from-shell
      ghq
      helm-ghq
      magit))
 
 (setq spacemacs-ghq-excluded-packages '())
 
-(defun spacemacs-ghq/pre-init-exec-path-from-shell ()
-  (add-to-list 'exec-path-from-shell-variables "GHQ_ROOT"))
-
 (defun spacemacs-ghq/init-ghq ()
   (use-package ghq
-    :defer t))
+    :defer t
+    :init
+    (spacemacs/copy-env-list '("GHQ_ROOT"))))
 
 (defun spacemacs-ghq/init-helm-ghq ()
   (use-package helm-ghq
