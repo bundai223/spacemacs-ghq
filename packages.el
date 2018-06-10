@@ -8,21 +8,21 @@
 ;;
 ;;; License: GPLv3
 
-(setq spacemacs-ghq-packages
+(setq ghq-packages
   '(
      ghq
      helm-ghq
      magit))
 
-(setq spacemacs-ghq-excluded-packages '())
+(setq ghq-excluded-packages '())
 
-(defun spacemacs-ghq/init-ghq ()
+(defun ghq/init-ghq ()
   (use-package ghq
     :defer t
     :init
     (spacemacs/copy-env-list '("GHQ_ROOT"))))
 
-(defun spacemacs-ghq/init-helm-ghq ()
+(defun ghq/init-helm-ghq ()
   (use-package helm-ghq
     :defer t
     :init
@@ -30,7 +30,7 @@
       '(helm-ghq-command-ghq-arg-list '("list"))
       '(helm-ghq-command-git-arg-ls-files '("ls-files" "-co" "--exclude-standard" "--")))))
 
-(defun spacemacs-ghq/pre-init-magit ()
+(defun ghq/pre-init-magit ()
   (setq-default magit-repository-directories t)
   (with-eval-after-load 'magit-repos
     (defun magit-list-repos ()
