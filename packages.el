@@ -26,9 +26,9 @@
   (use-package helm-ghq
     :defer t
     :init
-    (custom-set-variables
-      '(helm-ghq-command-ghq-arg-list '("list"))
-      '(helm-ghq-command-git-arg-ls-files '("ls-files" "-co" "--exclude-standard" "--")))))
+    (setq
+      helm-ghq-command-ghq-arg-list '("list")
+      helm-ghq-command-git-arg-ls-files '("ls-files" "-co" "--exclude-standard" "--"))))
 
 (defun ghq/pre-init-magit ()
   (setq-default magit-repository-directories t)
