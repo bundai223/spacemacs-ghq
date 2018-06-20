@@ -8,11 +8,10 @@
 ;;
 ;;; License: GPLv3
 
-(setq ghq-packages
-  '(
-     ghq
-     helm-ghq
-     magit))
+(setq ghq-packages '(
+                     ghq
+                     helm-ghq
+                     magit))
 
 (setq ghq-excluded-packages '())
 
@@ -24,8 +23,7 @@
   (use-package helm-ghq
     :defer (spacemacs/defer)
     :init
-    (setq
-      helm-ghq-command-ghq-arg-list '("list"))))
+    (setq helm-ghq-command-ghq-arg-list '("list"))))
 
 (defun ghq/pre-init-magit ()
   (setq-default magit-repository-directories t)
