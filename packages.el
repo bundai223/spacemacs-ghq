@@ -25,5 +25,7 @@
     :init
     (setq helm-ghq-command-ghq-arg-list '("list"))))
 
-(defun ghq/pre-init-magit ()
-  (setq magit-repository-directories (list (cons (getenv "GHQ_ROOT") 3))))
+(defun ghq/post-init-magit ()
+  (with-eval-after-load 'magit-repos
+    (require 'helm-ghq)
+    (add-to-list 'magit-repository-directories (cons (helm-ghq--root) 3))))
