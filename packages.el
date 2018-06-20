@@ -18,9 +18,7 @@
 
 (defun ghq/init-ghq ()
   (use-package ghq
-    :defer (spacemacs/defer)
-    :init
-    (spacemacs/copy-env-list '("GHQ_ROOT"))))
+    :defer (spacemacs/defer)))
 
 (defun ghq/init-helm-ghq ()
   (use-package helm-ghq
