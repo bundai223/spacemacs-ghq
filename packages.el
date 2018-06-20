@@ -26,8 +26,4 @@
     (setq helm-ghq-command-ghq-arg-list '("list"))))
 
 (defun ghq/pre-init-magit ()
-  (setq-default magit-repository-directories t)
-  (with-eval-after-load 'magit-repos
-    (defun magit-list-repos ()
-      (require 'ghq)
-      (ghq--find-projects-full-path))))
+  (setq magit-repository-directories (list (cons (getenv "GHQ_ROOT") 3))))
