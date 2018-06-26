@@ -27,5 +27,5 @@
 
 (defun ghq/post-init-magit ()
   (with-eval-after-load 'magit-repos
-    (require 'helm-ghq)
-    (add-to-list 'magit-repository-directories (cons (helm-ghq--root) 3))))
+    (require 'ghq)
+    (add-to-list 'magit-repository-directories (cons (ghq--find-root) 3))))
