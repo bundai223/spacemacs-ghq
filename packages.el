@@ -8,24 +8,14 @@
 ;;
 ;;; License: GPLv3
 
-(setq ghq-packages '(
-                     ghq
-                     helm-ghq
+(setq ghq-packages '(ghq
                      magit))
-
-(setq ghq-excluded-packages '())
 
 (defun ghq/init-ghq ()
   (use-package ghq
-    :defer (spacemacs/defer)))
-
-(defun ghq/init-helm-ghq ()
-  (use-package helm-ghq
-    :defer (spacemacs/defer)
-    :init
-    (setq helm-ghq-command-ghq-arg-list '("list"))))
+    :defer t))
 
 (defun ghq/post-init-magit ()
-  (with-eval-after-load 'magit-repos
-    (require 'ghq)
-    (add-to-list 'magit-repository-directories (cons (ghq--find-root) 3))))
+  (eval-after-load 'magit-repos
+    '(add-to-list 'magit-repository-directories
+                  (cons (or (getenv "GHQ_ROOT") "~/.ghq") 3) t)))
